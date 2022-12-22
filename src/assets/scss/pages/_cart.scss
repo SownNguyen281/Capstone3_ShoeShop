@@ -1,0 +1,60 @@
+.carts{
+    
+    h2{
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 48px;
+        margin: 80px 0px;
+    }
+    table{
+        
+        thead{
+            tr{
+                th{
+
+                }
+            }
+        }
+        tbody{
+            tr{
+                th{
+
+                }
+                td{
+                    .edit, .delete{
+                        background-color: #e4ac60;
+                        color: white;
+                        letter-spacing: 1.25px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        margin-right: 20px;
+                    }
+                    .plus{
+                        margin: 0 5px 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    .btn-order{
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+        
+        .btn{
+            background-color: #e4ac60;
+            color: white;
+            letter-spacing: 1.25px;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            &:hover{
+                color: black;
+                box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.detail{
+    .detail-row{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 100px 0 100px ;
+        .detail-col-4{
+            width: 40%;
+            img{
+                
+            }
+            h2{
+                font-weight: 400;
+                font-size: 40px;
+                line-height: 36px;
+            }
+            p{
+                margin-top: 30px;
+            }
+            .size{
+                h3{
+                    color: #5cb85c;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 29px;
+                }
+                .size-button{
+                    
+                    .btn{
+                        background-color: #cac5bf;
+                        color: black;
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 29px;
+                        margin-right: 20px;
+                        &:hover{
+                            color: #64a65c;
+                        }
+                    }
+                }
+                .price{
+                    color: #d9534f;
+                    font-weight: 600;
+                    font-size: 30px;
+                    line-height: 36px;
+                }
+                .quantity-change{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    height: 20px;
+                    margin-top: 30px;
+                    .btn{
+                        background: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+                        font-weight: 400;
+                        font-size: 30px;
+                        line-height: 20px;
+                        &:hover{
+                            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+                        }
+                    }
+                    p{
+                        font-weight: 400;
+                        font-size: 30px;
+                        // line-height: 36px;
+                        margin: 0 10px 0 10px;
+                    }
+                }
+                a{
+                    background-color:#e4ac60 ;
+                    margin-top: 50px;
+                    width: 160px;
+                    height: 55px;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 29px;
+                    color: white;
+                    border-radius: 20px;
+                    &:hover{
+                        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+                    }
+                }
+            }
+        }
+        .detail-content{
+            background-color: white;
+            width: 60%;
+            padding-left: 50px;
+        }
+    }
+}   

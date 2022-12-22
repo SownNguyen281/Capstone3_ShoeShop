@@ -1,0 +1,44 @@
+.footer {
+
+  .footer-top {
+    text-align: center;
+    table{
+        width: 100%;
+    }
+    th{
+        width: 30%;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        padding-top: 50px;
+    }
+    td{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 5px 0;
+        a{
+            text-decoration: none;
+            color: black;
+            &:hover{
+              color:burlywood;
+            }
+        }
+    }
+  }
+  .footer-bot {
+    background: #99aab5;
+    margin-top: 20px;
+    p{
+        text-align: center;
+        height: 74px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        align-items: center;
+        text-align: center;
+        padding-top: 25px;
+    }
+  }
+}
+

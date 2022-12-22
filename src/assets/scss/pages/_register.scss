@@ -1,0 +1,87 @@
+.container{
+    margin-bottom: 50px;
+    h3{
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        margin: 50px  0;
+
+    }
+    .form-content{
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        .form-group{
+            p{
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 24px;
+                letter-spacing: 0.135px;
+                color: rgba(0, 0, 0, 0.6);
+            }
+            .form-control{
+
+            }
+            .text{
+
+            }
+        }
+        .gender{
+            display: flex;
+            flex-direction: column;
+            .gender-content{
+                display: flex;
+                gap: 10px 20px;
+                h5{
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 24px;
+                    letter-spacing: 0.135px;
+                    color: rgba(0, 0, 0, 0.6);
+                }
+                .form-check{
+                    
+                    
+                    width: 40px;
+                    height: 51px;
+                    .form-check-input{
+                        
+                        
+                    }
+                    .form-check-label{
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 20px;
+                        letter-spacing: 0.25px;
+                        color: #7289da;
+                       
+                    }
+                }
+            }
+            
+            .form-btn{
+                
+                padding-top: 30px;
+                gap: 10px;
+               
+            .btn{
+                background: #5464ac;
+                box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+                border-radius: 50px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                color: white;
+                width: 121px;
+                height: 48px;
+                &:hover{
+                    background-color:  #6200EE;
+                }
+            }
+        }
+        }
+        
+    }
+    
+}

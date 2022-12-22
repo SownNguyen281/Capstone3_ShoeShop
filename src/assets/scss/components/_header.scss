@@ -1,0 +1,92 @@
+.header{
+    
+    .logo-header{
+        background-color: #23272a;
+        height:fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+
+            .logo-link{
+                img{
+                    width: 200px;
+                    height:fit-content;
+                    
+                }
+            }
+        }
+
+        .nav-bar-search{
+            display: flex;
+            justify-content: center;
+
+            .flex-item{
+                margin:0 15px;
+                
+                a{
+                    text-decoration: none;
+                    font-weight: 300;
+                    font-size: 20px;
+                    color:#F7F7F7 ;
+                    transition: all 0.3s;
+                    position: relative;
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        width: 0;
+                        height: 3px;
+                        bottom: -5px;
+                        left: 0;
+                        background-color: burlywood;
+                        transition: width 0.3s;
+                    }
+                    &:hover{
+                        &::before{
+                            width: 100%;
+                        }
+                        color: burlywood;
+                    }
+                }
+                
+            }
+           
+        }
+    }
+
+    .menu{
+        min-height: 50px;
+        
+       .nav-menu{
+            background-color: #F5F5F5;
+            min-height: 50px;
+            padding-top: 12px;
+            a{
+                margin: 0 15px;
+                text-decoration: none;
+                align-items: center;
+                color: black;
+                transition: all 0.3s;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    width: 0;
+                    height: 3px;
+                    bottom: -5px;
+                    left: 0;
+                    background-color: burlywood;
+                    transition: width 0.3s;
+                }
+                &:hover{
+                    &::before{
+                        width: 100%;
+                    }
+                    color: burlywood;
+                }
+            }    
+        
+       }
+
+    }
+}

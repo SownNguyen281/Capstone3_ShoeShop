@@ -1,0 +1,92 @@
+.row{
+    margin-top: 30px;
+    .col-4{
+        background: #F8F8F8;
+        padding-bottom: 40px;
+        .card{
+            width: 330px;
+            height: 360px;
+            transition: all 0.3s;
+            &:hover{
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    
+            }
+            position: relative;
+            .icon{
+                position: absolute;
+                left: 90%;                  
+                top: 0%;                   
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 30px;
+                color: #FB0B0B;
+    
+            }
+            img{
+                position: absolute;
+                left: 10%;                  
+                top: 2%;
+                width: 240px;
+                height: 185px;
+                // margin: 30px 45px;
+                border-radius: 10px;
+            }
+            .card-body{
+                font-weight: 300;
+                
+                .card-title{    
+                    position: absolute;
+                    left: 10%;                  
+                    top: 30%;
+                    // margin: 210px 23px;
+                    font-size: 24px;
+                    line-height: 29px;
+                }
+                p{
+                    max-height: 24px;
+                    line-height: 24px;
+                    font-size: 20px;
+                    position: absolute;
+                    left: 10%;                  
+                    top: 60%;
+                    // margin: 235px 23px;                  
+                    color: #CBC9C9;
+                }
+        
+            }
+            .card-footer{
+                padding: 0;
+                border-top: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 24px;
+                line-height: 29px;
+                height: 65px;
+                background-color: white;
+                .btn{
+                    background-color: #e4ac60;
+                    width: 50%;
+                    height: 100%;
+                    color:black;
+                    font-weight: 600;
+                    padding-top: 10px;
+                    font-size: 25px;
+                    transition: all 0.3s;
+                    &:hover{
+                        background: #22714d;
+                        color: #F8F8F8;
+                        border-radius: 10px;
+                    }
+                }
+                .product-price{
+                    background-color:  #DEDDDC;
+                    width: 50%;
+                    height: 100%;
+                    font-weight: 600;
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+}

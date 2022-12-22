@@ -1,0 +1,60 @@
+.container{
+    h3{
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        color: #23272a;
+    }
+    .content{
+        display: block;
+        .form-group{
+            p{
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 24px;
+                letter-spacing: 0.135px;
+                color:#23272a;
+            }
+            .form-control{
+                width: 443px;
+                height: 54px;
+                background: rgba(33, 33, 33, 0.08);
+                border-radius: 4px 4px 0px 0px;
+
+            }
+        }
+    }
+        .button{
+            width: 443px;
+            display: flex;
+            justify-content: end;
+            align-items:center;
+            padding: 12px;
+            gap: 10px;
+            .register-now{
+                a{
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 24px;
+                    letter-spacing: 0.135px;
+                    color: rgba(21, 42, 235, 0.8);
+                }
+            }
+            .btn{
+                color: white;
+                width: 121px;
+                font-weight: 600;
+                height: 48px;
+                background: #7289da;
+                box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+                border-radius: 17px;
+                transition: all 0.6s;
+                &:hover{
+                    color:#23272a;
+                    border-radius: 50px;
+                }
+            }
+        }
+    
+}

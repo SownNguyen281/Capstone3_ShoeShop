@@ -2,11 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import ProductCard from "../../Components/ProductCard/ProductCard";
-import {
-  
-  getByIdAllProductApi,
-  
-} from "../../redux/reducers/ShopReducer";
+import { getByIdAllProductApi} from "../../redux/reducers/ShopReducer";
 
 export default function Detail(props) {
   const { dataProduct, productDetail } = useSelector((state) => state.shopReducer);

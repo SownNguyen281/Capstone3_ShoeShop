@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { useDispatch } from "react-redux";
 import { getLoginAsyncAction } from "../../redux/reducers/userReducer";
+import LoginFacebook from "../../Components/LoginFacebook/LoginFacebook";
 
 export default function Login(props) {
   const dispatch = useDispatch();
@@ -73,8 +74,12 @@ export default function Login(props) {
             <button className="btn mt-2" type="submit">
               LOGIN
             </button>
+            
           </div>
         </div>
+      
+              <LoginFacebook/>
+            
       </div>
     </form>
   );

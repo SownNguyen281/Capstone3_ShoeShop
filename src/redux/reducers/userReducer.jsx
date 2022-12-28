@@ -5,6 +5,9 @@ import {ACCESSTOKEN, http, settings, USER_LOGIN} from '../../util/config'
 
 const initialState = {
     userLogin: settings.getStorageJson(USER_LOGIN) ? settings.getStorageJson(USER_LOGIN) : {},
+    userProfile:{
+
+    },
 }
 
 const userReducer = createSlice({
@@ -19,10 +22,14 @@ const userReducer = createSlice({
         settings.setCookie(ACCESSTOKEN,action.payload.accessToken,30);
         history.push('/profile');
     },
+
+    getProfileAction: (state, action) => {
+        state.userProfile = action.payload;
+      }
   }
 });
 
-export const {getLoginAsyncAction} = userReducer.actions
+export const {getLoginAsyncAction,getProfileAction} = userReducer.actions
 
 export default userReducer.reducer
 
@@ -41,5 +48,38 @@ export const loginAsyncApi = (id) => {
         }
     }
 }
+
+export const getProfileApi = () => {
+    return async dispatch => {
+  
+      const result = await http.post('/api/users/getprofile');
+      const action = getProfileAction(result.data.content);
+      dispatch(action);
+      
+  
+    }
+  }
+
+export const loginFacebookApi = (tokenFBApp) => {
+    return async dispatch => {
+      const result = await http.post('/api/Users/facebooklogin', { facebookToken: tokenFBApp });
+      //sau khi lấy dữ liệu tạo ra actionCreator = {type:,payload}
+      const action = getLoginAsyncAction(result.data.content);
+      await dispatch(action);
+  
+  
+      const actionGetProfile = getProfileApi();
+      dispatch(actionGetProfile)
+  
+  
+  
+      //Lưu vào localstorage và cookie
+      settings.setStorageJson(USER_LOGIN, result.data.content);
+  
+      settings.setStorage(ACCESSTOKEN, result.data.content.accessToken);
+  
+      settings.setCookie(ACCESSTOKEN, result.data.content.accessToken, 30);
+    }
+  }
 
 

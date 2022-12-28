@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
-import ProductCard from "../../Components/ProductCard/ProductCard";
-import { getByIdAllProductApi} from "../../redux/reducers/ShopReducer";
+
+import {
+  addToCartAction,
+  getByIdAllProductApi,
+} from "../../redux/reducers/ShopReducer";
 
 export default function Detail(props) {
-  const { dataProduct, productDetail } = useSelector((state) => state.shopReducer);
+  const { productDetail } = useSelector((state) => state.shopReducer);
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -43,25 +46,17 @@ export default function Detail(props) {
               </button>
             </div>
             <p className="price">{productDetail.price}$</p>
-            {dataProduct.slice(0,1).map((item, index) => {
-              return (
-                <div className="quantity-change">
-                  <button
-                    type="submit"
-                    class="btn btn-primary"                    
-                  >
-                    +
-                  </button>
-                  <p>{item.quantity}</p>
-                  <button
-                    type="submit"
-                    class="btn btn-success"                    
-                  >
-                    -
-                  </button>
-                </div>
-              );
-            })}
+
+            <div className="quantity-change">
+              <button type="submit" class="btn btn-primary">
+                +
+              </button>
+              <p>1</p>
+              <button type="submit" class="btn btn-success">
+                -
+              </button>
+            </div>
+
             <NavLink className="btn btn-warning" to={`/cart`}>
               Add to cart
             </NavLink>
@@ -73,19 +68,36 @@ export default function Detail(props) {
         <h2>Product Feature</h2>
       </div>
       <div className="row">
-        {productDetail.relatedProducts.map((item, index) => {
+        {productDetail.relatedProducts?.map((item, index) => {
           return (
-          
-              <div className="col-4" key={index}>
-                <ProductCard item={item} />
+            <div className="col-4" key={index}>
+              <div className="card">
+                <div className="icon">
+                  <i className="fa fa-heart"></i>
+                </div>
+                <img src={item.image} alt="product" />
+                <div className="card-body">
+                  <h3 className="card-title">{item.name}</h3>
+                  <p>{item.shortDescription}</p>
+                </div>
+                <div className="card-footer">
+                  <NavLink
+                    to={`/detail/${item.id}`}
+                    className={"btn"}
+                    onClick={() => {
+                      const action = addToCartAction(item);
+                      dispatch(action);
+                    }}
+                  >
+                    Buy Now
+                  </NavLink>
+                  <div className="product-price text-center">{item.price}</div>
+                </div>
               </div>
-            
+            </div>
           );
         })}
       </div>
-
-
-      
     </div>
   );
 }

@@ -22,21 +22,13 @@ export default function Home(props) {
     <div className="product-feature">
         <h2>Product Feature</h2>
     </div>
-      {/* <div className="row">
+      <div className="row">
         {dataProduct.slice(0,6).map((item, index) => {
-          return (
-          
-              <div className="col-4" key={index}>
-                <ProductCard item={item} />
-              </div>
-            
-          );
+          return <div className="col-4" key={index}>
+          <ProductCard item={item} />
+        </div>
         })}
-      </div> */}
-
-      
-
-
+      </div>
     </div>
   );
 }

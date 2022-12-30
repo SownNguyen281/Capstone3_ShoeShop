@@ -20,7 +20,7 @@ export default function Login(props) {
         .email("email is invalid"),
       password: yup
         .string()
-        .min(3, "password must be at least 3 to 10 character"),
+        .min(3, "password must be at least 3 character"),
     }),
     onSubmit: (values) => {
       const actionAsyncLogin = getLoginAsyncAction(values);

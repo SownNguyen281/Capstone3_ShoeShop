@@ -1,0 +1,41 @@
+.container{
+    h3{
+        font-weight: 500;
+        font-size: 45px;
+        
+    }
+    .row{
+        .avatar{
+            background-color: white;
+            img{
+                border-radius: 25% 10%;             
+                object-fit: cover;
+                // margin: 100px 0 0 170px;
+                border: 7px solid #ffffff50;
+                float: left;
+                background-image: linear-gradient(45deg,#08aeea,#2af598 100%);
+            }
+        }
+    }
+    .form-btn{
+                    
+        padding-top: 30px;
+        gap: 10px;
+       
+    .btn{
+        background: #5464ac;
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: white;
+        width: 121px;
+        height: 48px;
+        &:hover{
+            background-color:  #6200EE;
+            color: white;
+        }
+    }
+    }
+}

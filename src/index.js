@@ -47,7 +47,7 @@ root.render(
           <Route path="profile" element={<Profile />}></Route>
           <Route path="*" element={<Navigate to={""} />}></Route>
         </Route>
-
+                    {/* User Routes */}
         <Route path="user" element={<UserTemplate />}>
           <Route index element={<Login />}></Route>
           <Route path="login" element={<Login />}></Route>

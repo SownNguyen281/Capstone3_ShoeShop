@@ -25,35 +25,64 @@ const userReducer = createSlice({
 
     getProfileAction: (state, action) => {
         state.userProfile = action.payload;
-      }
+      },
+    updateProfileAction: (state, action) => {
+      state.userProfile = action.payload;
+    },
+    registerProfileAction:(state, action) => {
+      state.userProfile = action.payload;
+    },
   }
 });
 
-export const {getLoginAsyncAction,getProfileAction} = userReducer.actions
+export const {getLoginAsyncAction,getProfileAction,updateProfileAction,registerProfileAction} = userReducer.actions
 
 export default userReducer.reducer
 
 
-export const loginAsyncApi = (id) => {
+export const loginAsyncApi = (userLogin) => {
+    
     return async dispatch => {
-        //Gọi api
-        try {
-            let result = await http.get('/api/Product/getbyid?id='+id);
-            //Sau khi lấy dữ liệu từ api về => dispatch lên reducer
-            //Tạo ra action creator đưa dữ liệu lên reducer
-            const action = getLoginAsyncAction(result.data.content);
-            dispatch(action);
-        } catch (err) {
-
-        }
+      const result = await http.post('/api/Users/signin', userLogin);
+      
+      const action = getLoginAsyncAction(result.data.content);
+      await dispatch(action);
+  
+      const actionGetProfile = getProfileApi();
+      dispatch(actionGetProfile)
+  
+       
     }
+
 }
 
 export const getProfileApi = () => {
     return async dispatch => {
   
-      const result = await http.post('/api/users/getprofile');
+      const result = await http.post('/api/Users/getProfile');
       const action = getProfileAction(result.data.content);
+      dispatch(action);
+      
+  
+    }
+  }
+
+  export const updateProfileApi = () => {
+    return async dispatch => {
+  
+      const result = await http.post('/api/Users/updateProfile');
+      const action = updateProfileAction(result.data.content);
+      dispatch(action);
+      
+  
+    }
+  }
+
+  export const registerProfileApi = () => {
+    return async dispatch => {
+  
+      const result = await http.post('/api/Users/signup');
+      const action = registerProfileAction(result.data.content);
       dispatch(action);
       
   

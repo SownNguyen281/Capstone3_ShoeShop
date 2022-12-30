@@ -1,10 +1,37 @@
+import { useFormik } from "formik";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import * as yup from "yup"
+import { registerProfileAction } from "../../redux/reducers/userReducer";
+export default function Register(props) {
+  const dispatch = useDispatch();
 
-export default function Register() {
+  const frmRegister = useFormik({
+    initialValues:{
+      email:"",
+      password:"",
+      passwordconfirm:"",
+      name:"",
+      phone:"",
+    },
+    validationSchema: yup.object().shape({
+      email: yup.string().email("email is invalid"),
+      password:yup.string().min(3,"password must be at least 3 character"),
+      passwordconfirm: yup.string().min(3,"Confirm pass must be like password"),
+      name: yup.string().max(40).matches(/^([a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+)((\s{1}[a-vxyỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâđ]+){1,})$/,"your name is invalid"),
+      phone: yup.string().max(11).matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/, 'phone must be number'),
+    }),
+    onSubmit: (values) => {
+      const actionAsyncUpdate = registerProfileAction(values);
+      dispatch(actionAsyncUpdate);
+    },
+  })
+
+
   return (
-    <form className="container">
+    <form className="container" onSubmit={frmRegister.handleSubmit}>
       <h3>Register</h3>
-
       <div className="form-content">
         <div className="form-group ">
           <p>Email</p>
@@ -13,8 +40,10 @@ export default function Register() {
             id="email"
             name="email"
             placeholder="Email"
+            onChange={frmRegister.handleChange}
+            onBlur={frmRegister.handleBlur}
           />
-          <p className="text text-danger">Validation</p>
+          <p className="text text-danger">{frmRegister.errors.email}</p>
         </div>
         <div className="form-group ">
           <p>Password</p>
@@ -24,9 +53,10 @@ export default function Register() {
             name="password"
             type={"password"}
             placeholder="Password"
+            onChange={frmRegister.handleChange}
+            onBlur={frmRegister.handleBlur}
           />
-
-          <p className="text text-danger">Validation</p>
+          <p className="text text-danger">{frmRegister.errors.password}</p>
         </div>
         <div className="form-group ">
           <p>Password Confirm</p>
@@ -36,9 +66,10 @@ export default function Register() {
             name="pass-confirm"
             type={"password"}
             placeholder="Password confirm"
+            onChange={frmRegister.handleChange}
+            onBlur={frmRegister.handleBlur}
           />
-
-          <p className="text text-danger">Validation</p>
+          <p className="text text-danger">{frmRegister.errors.passwordconfirm}</p>
         </div>
         <div className="form-group ">
           <p>Name</p>
@@ -47,9 +78,10 @@ export default function Register() {
             id="name"
             name="name"
             placeholder="Name"
+            onChange={frmRegister.handleChange}
+            onBlur={frmRegister.handleBlur}
           />
-
-          <p className="text text-danger">Validation</p>
+          <p className="text text-danger">{frmRegister.errors.name}</p>
         </div>
         <div className="form-group ">
           <p>Phone</p>
@@ -59,9 +91,10 @@ export default function Register() {
             name="phone"
             type={"tel"}
             placeholder="Phone"
+            onChange={frmRegister.handleChange}
+            onBlur={frmRegister.handleBlur}
           />
-
-          <p className="text text-danger">Validation</p>
+          <p className="text text-danger">{frmRegister.errors.phone}</p>
         </div>
         <div className="gender">
           <div className="gender-content">
@@ -92,9 +125,9 @@ export default function Register() {
             </div>
           </div>
           <div className="form-btn">
-            <button className="btn mt-2" type="submit">
+            <NavLink to={'/profile'} className="btn mt-2" type="submit">
               SUBMIT
-            </button>
+            </NavLink>
           </div>
         </div>
       </div>

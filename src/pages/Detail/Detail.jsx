@@ -85,6 +85,7 @@ export default function Detail(props) {
                     to={`/detail/${item.id}`}
                     className={"btn"}
                     onClick={() => {
+                      const itemCart = {...item,quantity:1};
                       const action = addToCartAction(item);
                       dispatch(action);
                     }}

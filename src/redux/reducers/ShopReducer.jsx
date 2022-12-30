@@ -111,7 +111,7 @@ export const getByIdAllProductApi = (id) => {
             const action = getByIdProductAction(result.data.content);
             dispatch(action);
         } catch (err) {
-
+            console.log(err);
         }
     }
 }

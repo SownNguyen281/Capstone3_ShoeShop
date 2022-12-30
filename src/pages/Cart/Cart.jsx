@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 import {
   addToCartAction,
   changeItemAction,
   delItemAction,
+  getByIdAllProductApi,
 } from "../../redux/reducers/ShopReducer";
 
 export default function Cart(props) {
   const dispatch = useDispatch();
-  const { carts, productDetail } = useSelector((state) => state.shopReducer);
+  const { carts, productDetail,dataProduct } = useSelector((state) => state.shopReducer);
+
+
   
+
+
   return (
     <div className="container carts">
       <h2>Carts</h2>
@@ -106,9 +111,9 @@ export default function Cart(props) {
         </tbody>
       </table>
       <div className="btn-order">
-        <button className="btn mt-2" type="submit">
+        <NavLink to={'/login'} className="btn mt-2" type="submit" >
           SUBMIT ORDER
-        </button>
+        </NavLink>
       </div>
 
       <div className="product-feature">
